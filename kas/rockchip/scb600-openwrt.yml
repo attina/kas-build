@@ -7,7 +7,7 @@ machine: scb600
 
 repos:
   meta-openwrt:
-    url: https://github.com/kraj/meta-openwrt.git
+    url: https://github.com/attina/meta-openwrt.git
     branch: master
     path: layers/meta-openwrt
 
