@@ -26,6 +26,6 @@ repos:
       meta-arm-toolchain:
 
   meta-pico:
-    url: https://github.com/picocom-chips/meta-pico.git
+    url: https://github.com/attina/meta-pico.git
     branch: master
     path: layers/meta-pico
