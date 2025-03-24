@@ -10,15 +10,12 @@ on:
 
 env:
   KAS_BUILD_DIR: build
-  USER_UID: 1001
-  USER_GID: 1001
+  KAS_LAYER_DIR: layers
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/siemens/kas/kas:latest
-      options: --user root
+
     strategy:
       matrix:
         config: 
@@ -28,25 +25,24 @@ jobs:
       fail-fast: false
 
     steps:
+    - name: Install System Dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y build-essential chrpath cpio gawk
+
     - name: Checkout Sources
       uses: actions/checkout@v4
       with:
         submodules: 'recursive'
         fetch-depth: 0
 
-    - name: Install System Dependencies
-      run: |
-        apt update
-        apt install -y build-essential chrpath cpio gawk
-
     - name: Initialize Build Environment
       run: |
         mkdir -p ${{ env.KAS_BUILD_DIR }}
-        chown -R ${{ env.USER_UID }}:${{ env.USER_GID }} ${{ env.KAS_BUILD_DIR }}
 
     - name: Build Image
       run: |
-        kas build ${{ matrix.config }}
+        ./kas-container build ${{ matrix.config }}
 
     - name: Layer State Cache
       uses: actions/cache@v3
@@ -54,6 +50,7 @@ jobs:
         path: |
           ${{ env.KAS_BUILD_DIR }}/downloads
           ${{ env.KAS_BUILD_DIR }}/sstate-cache
+          ${{ env.KAS_LAYER_DIR }}
         key: ${{ runner.os }}-${{ matrix.config }}-${{ hashFiles(matrix.config) }}
 
     - name: Store Output Images

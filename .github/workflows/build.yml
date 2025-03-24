@@ -13,42 +13,36 @@ on:
 
 env:
   KAS_BUILD_DIR: build
-  USER_UID: 1001
-  USER_GID: 1001
+  KAS_LAYER_DIR: layers
 
 jobs:
   yocto-build:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/siemens/kas/kas-isar:latest
-      options: --user root
 
     steps:
+    - name: Install System Dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y build-essential chrpath cpio gawk
+
     - name: Checkout Repository
       uses: actions/checkout@v4
       with:
         submodules: 'recursive'
         fetch-depth: 0
 
-    - name: Install System Dependencies
-      run: |
-        apt update
-        apt install -y build-essential chrpath cpio gawk
-
     - name: Initialize Build Environment
       run: |
         mkdir -p ${{ env.KAS_BUILD_DIR }}
-        chown -R ${{ env.USER_UID }}:${{ env.USER_GID }} ${{ env.KAS_BUILD_DIR }}
 
     - name: Clean Build Preparation
       if: ${{ inputs.clean_build }}
       run: |
         rm -rf ${{ env.KAS_BUILD_DIR }}/*
-        kas prune --worktree-dir ${{ env.KAS_BUILD_DIR }}
 
     - name: Execute Yocto Build
       run: |
-        kas build ${{ inputs.config }} 
+        ./kas-container build ${{ inputs.config }}
 
     - name: Cache Management
       uses: actions/cache@v3
@@ -56,6 +50,7 @@ jobs:
         path: |
           ${{ env.KAS_BUILD_DIR }}/downloads
           ${{ env.KAS_BUILD_DIR }}/sstate-cache
+          ${{ env.KAS_LAYER_DIR }}
         key: ${{ runner.os }}-${{ hashFiles('external_layer.sha') }}-${{ hashFiles(inputs.config) }}
 
     - name: Package Artifacts
