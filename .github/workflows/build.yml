@@ -31,14 +31,14 @@ jobs:
         submodules: 'recursive'
         fetch-depth: 0
 
-    - name: Initialize Build Environment
-      run: |
-        mkdir -p ${{ env.KAS_BUILD_DIR }}
-
     - name: Clean Build Preparation
       if: ${{ inputs.clean_build }}
       run: |
         rm -rf ${{ env.KAS_BUILD_DIR }}/*
+
+    - name: Initialize Build Environment
+      run: |
+        mkdir -p ${{ env.KAS_BUILD_DIR }}
 
     - name: Execute Yocto Build
       run: |
