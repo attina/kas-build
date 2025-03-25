@@ -57,7 +57,7 @@ jobs:
       if: ${{ success() }}
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ matrix.config | basename }}
+        name: ${{ matrix.config }}
         path: ${{ env.KAS_BUILD_DIR }}/tmp/deploy/images/**/*
         retention-days: 3
         include-hidden-files: true
