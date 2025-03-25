@@ -6,6 +6,10 @@ on:
         description: 'Config file path (e.g., kas/rockchip/scb600-openwrt.yml)'
         required: true
         default: 'kas/rockchip/scb600-openwrt.yml'
+      recipe:
+        description: 'Recipe to build (e.g., virtual/kernel)'
+        required: true
+        default: 'virtual/kernel'
       clean_build:
         description: 'Perform full clean rebuild'
         type: boolean
@@ -42,7 +46,7 @@ jobs:
 
     - name: Execute Yocto Build
       run: |
-        ./kas-container shell ${{ inputs.config }} -c "bitbake -c virtual/kernel"
+        ./kas-container shell ${{ inputs.config }} -c "bitbake ${{ inputs.recipe }}"
 
     - name: Cache Management
       uses: actions/cache@v3
