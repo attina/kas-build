@@ -17,3 +17,5 @@ target:
 local_conf_header:
   default: |
     INHERIT += " openwrt-distro-defaults "
+    PACKAGE_CLASSES = "package_ipk"
+    IMAGE_FEATURES += "package-management"
