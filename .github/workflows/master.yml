@@ -18,10 +18,13 @@ jobs:
 
     strategy:
       matrix:
-        config: 
-          - kas/rockchip/scb600-openwrt.yml
-          - kas/nxp/ls1046apscb-dev.yml
-          - kas/picocom/pc805-dev.yml
+        include:
+          - config: kas/rockchip/scb605-openwrt.yml
+            target: scb605-openwrt
+          - config: kas/nxp/ls1046apscb-dev.yml
+            target: ls1046apscb-dev
+          - config: kas/picocom/pc805-dev.yml
+            target: pc805-dev
       fail-fast: false
 
     steps:
@@ -57,7 +60,7 @@ jobs:
       if: ${{ success() }}
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ matrix.config }}
+        name: ${{ matrix.target }}
         path: ${{ env.KAS_BUILD_DIR }}/tmp/deploy/images/**/*
         retention-days: 3
         include-hidden-files: true
