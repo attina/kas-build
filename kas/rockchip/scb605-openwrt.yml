@@ -19,3 +19,6 @@ local_conf_header:
     INHERIT += " openwrt-distro-defaults "
     PACKAGE_CLASSES = "package_ipk"
     IMAGE_FEATURES += "package-management"
+  scb600: |
+    IMAGE_INSTALL:append = " lrzsz linux-firmware-rtl-nic \
+    luci uhttpd"
