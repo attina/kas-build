@@ -23,8 +23,8 @@ jobs:
             target: scb605-openwrt
           - config: kas/nxp/ls1046apscb-dev.yml
             target: ls1046apscb-dev
-          - config: kas/picocom/pc805-dev.yml
-            target: pc805-dev
+          # - config: kas/picocom/pc805-dev.yml
+          #   target: pc805-dev
       fail-fast: false
 
     steps:
