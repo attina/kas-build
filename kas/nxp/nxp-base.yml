@@ -13,7 +13,10 @@ repos:
   meta-qoriq:
     url: https://github.com/nxp-qoriq/meta-qoriq
     path: layers/meta-qoriq
-    branch: styhead
+    branch: scarthgap
+    layers:
+      meta-qoriq-bsp:
+      meta-qoriq-sdk:
 
   meta-freescale-distro:
     url: https://github.com/Freescale/meta-freescale-distro

@@ -19,6 +19,6 @@ repos:
     branch: master
     path: layers/meta-pico
 
-distro: pico
+distro: fsl-qoriq
 machine: ls1046apscb
 target: pico-sdk-ls1046a
