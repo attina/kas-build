@@ -46,7 +46,7 @@ jobs:
 
     - name: Execute Yocto Build
       run: |
-        ./kas-container shell ${{ inputs.config }} -c "bitbake ${{ inputs.recipe }}"
+        ./kas-container shell ${{ inputs.config }} -c "bitbake -n ${{ inputs.recipe }}"
 
     - name: Cache Management
       uses: actions/cache@v3

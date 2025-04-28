@@ -45,7 +45,7 @@ jobs:
 
     - name: Build Image
       run: |
-        ./kas-container shell ${{ matrix.config }} -c "bitbake virtual/kernel"
+        ./kas-container shell ${{ matrix.config }} -c "bitbake -n virtual/kernel"
 
     - name: Layer State Cache
       uses: actions/cache@v3
