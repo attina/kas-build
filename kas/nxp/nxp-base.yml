@@ -21,7 +21,7 @@ repos:
   meta-freescale-distro:
     url: https://github.com/Freescale/meta-freescale-distro
     path: layers/meta-freescale-distro
-    branch: master
+    branch: scarthgap
 
   #meta-nxp-desktop:
   #  url: https://github.com/nxp-imx/meta-nxp-desktop
