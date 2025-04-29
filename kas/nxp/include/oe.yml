@@ -32,4 +32,4 @@ repos:
   meta-virtualization:
     url: https://git.yoctoproject.org/meta-virtualization
     path: layers/meta-virtualization
-    branch: master
+    branch: scarthgap
