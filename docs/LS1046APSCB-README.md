@@ -2,22 +2,20 @@
 
 ### Build Rootfs
 ```
-./kas-container build kas/nxp/ls1046apscb-dev.yml
+kas build kas/nxp/ls1046apscb-dev.yml
 ```
-### Build Composite Firmware (ls1046apscb)
+### Build Command for ls1046apscb
 ```
-./kas-container shell kas/nxp/ls1046apscb-dev.yml -c "bitbake secure-boot-qoriq"
-./kas-container shell kas/nxp/ls1046apscb-dev.yml -c "bitbake qoriq-composite-firmware"
-./kas-container shell kas/nxp/ls1046apscb-dev.yml -c "bitbake generate-boottgz"
+kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake secure-boot-qoriq"
+kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake qoriq-composite-firmware"
+kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake generate-boottgz"
+kas build kas/nxp/ls1046apscb-dev.yml
 ```
-### Build Composite Firmware (ls1046apscbc)
+### Build Command for ls1046apscbc
 ```
 kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake secure-boot-qoriq"
 kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake qoriq-composite-firmware"
 kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake generate-boottgz"
-```
-### Build Rootfs Image (ls1046apscbc)
-```
 kas build kas/nxp/ls1046apscbc-dev.yml
 ```
 ### Format SD card
@@ -36,6 +34,35 @@ setenv ethaddr 9F:86:A2:50:6F:BF
 ```
 tftp 80000000 kernel-fsl-ls1046a-pscbc-sdk.itb
 bootm 80000000#ls1046apscbc
+```
+### Set MAC Address in U-boot
+```
+setenv eth10addr 00:E0:0C:00:02:0a
+setenv eth11addr 00:E0:0C:00:02:0b
+setenv eth12addr 00:E0:0C:00:02:0c
+setenv eth13addr 00:E0:0C:00:02:0d
+setenv eth14addr 00:E0:0C:00:02:0e
+setenv eth15addr 00:E0:0C:00:02:0f
+setenv ethaddr 00:E0:0C:00:02:00
+setenv eth1addr 00:E0:0C:00:02:01
+setenv eth2addr 00:E0:0C:00:02:02
+setenv eth3addr 00:E0:0C:00:02:03
+setenv eth4addr 00:E0:0C:00:02:04
+setenv eth5addr 00:E0:0C:00:02:05
+setenv eth6addr 00:E0:0C:00:02:06
+setenv eth7addr 00:E0:0C:00:02:07
+setenv eth8addr 00:E0:0C:00:02:08
+setenv eth9addr 00:E0:0C:00:02:09
+```
+### Enable Ethernet Device in /etc/network/interfaces
+```
+# for ls1046apacb
+auto fm1-mac5
+iface fm1-mac5 inet dhcp
+
+# for ls1046apscbc
+auto fm1-mac6
+iface fm1-mac6 inet dhcp
 ```
 ### Patch for meta-qoriq layer
 - patches/ls1046apscb-meta-qoriq.patch
