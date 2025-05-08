@@ -1,0 +1,78 @@
+diff --git a/meta-qoriq-bsp/recipes-bsp/secure-boot/distro-bootscr.bb b/meta-qoriq-bsp/recipes-bsp/secure-boot/distro-bootscr.bb
+index 73c1f71..6c30551 100644
+--- a/meta-qoriq-bsp/recipes-bsp/secure-boot/distro-bootscr.bb
++++ b/meta-qoriq-bsp/recipes-bsp/secure-boot/distro-bootscr.bb
+@@ -3,7 +3,9 @@ LICENSE = "MIT"
+ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+ 
+ python __anonymous () {
+-    board="ls1012afrwy ls1012ardb ls1021atwr ls1028ardb ls1043ardb ls1046afrwy ls1046ardb ls1088ardb ls1088ardb-pb ls2088ardb lx2160ardb-rev2 lx2162aqds"
++    board="ls1012afrwy ls1012ardb ls1021atwr ls1028ardb ls1043ardb ls1046afrwy \
++        ls1046apscb ls1046apscbc\
++        ls1046ardb ls1088ardb ls1088ardb-pb ls2088ardb lx2160ardb-rev2 lx2162aqds"
+     m = d.getVar("MACHINE")
+     if m not in board:
+         raise bb.parse.SkipRecipe("This platform not exit secure-boot manifest")
+diff --git a/meta-qoriq-bsp/recipes-bsp/secure-boot/generate-boottgz.bb b/meta-qoriq-bsp/recipes-bsp/secure-boot/generate-boottgz.bb
+index bd12b4f..d7e62f4 100644
+--- a/meta-qoriq-bsp/recipes-bsp/secure-boot/generate-boottgz.bb
++++ b/meta-qoriq-bsp/recipes-bsp/secure-boot/generate-boottgz.bb
+@@ -4,7 +4,9 @@ LICENSE = "MIT"
+ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+ 
+ python __anonymous () {
+-    board="ls1012afrwy ls1012ardb ls1021atwr ls1028ardb ls1043ardb ls1046afrwy ls1046ardb ls1088ardb ls1088ardb-pb ls2088ardb lx2160ardb-rev2 lx2162aqds"
++    board="ls1012afrwy ls1012ardb ls1021atwr ls1028ardb ls1043ardb ls1046afrwy \
++        ls1046apscb ls1046apscbc\
++        ls1046ardb ls1088ardb ls1088ardb-pb ls2088ardb lx2160ardb-rev2 lx2162aqds"
+     m = d.getVar("MACHINE")
+     if m not in board:
+         raise bb.parse.SkipRecipe("This platform not exit secure-boot manifest")
+diff --git a/meta-qoriq-bsp/recipes-bsp/secure-boot/secure-boot-qoriq.bb b/meta-qoriq-bsp/recipes-bsp/secure-boot/secure-boot-qoriq.bb
+index ce435b3..84bde0f 100644
+--- a/meta-qoriq-bsp/recipes-bsp/secure-boot/secure-boot-qoriq.bb
++++ b/meta-qoriq-bsp/recipes-bsp/secure-boot/secure-boot-qoriq.bb
+@@ -4,7 +4,9 @@ LICENSE = "GPL-2.0-only"
+ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"
+ 
+ python __anonymous () {
+-    board="ls1012afrwy ls1012ardb ls1021atwr ls1028ardb ls1043ardb ls1046afrwy ls1046ardb ls1088ardb ls1088ardb-pb ls2088ardb lx2160ardb-rev2 lx2162aqds"
++    board="ls1012afrwy ls1012ardb ls1021atwr ls1028ardb ls1043ardb ls1046afrwy \
++        ls1046apscb ls1046apscbc\
++        ls1046ardb ls1088ardb ls1088ardb-pb ls2088ardb lx2160ardb-rev2 lx2162aqds"
+     m = d.getVar("MACHINE")
+     if m not in board:
+         raise bb.parse.SkipRecipe("This platform not exit secure-boot manifest")
+diff --git a/meta-qoriq-sdk/recipes-fsl/images/fsl-image-kernelitb/kernel-arm64.its b/meta-qoriq-sdk/recipes-fsl/images/fsl-image-kernelitb/kernel-arm64.its
+index 1398790..59ffd7a 100644
+--- a/meta-qoriq-sdk/recipes-fsl/images/fsl-image-kernelitb/kernel-arm64.its
++++ b/meta-qoriq-sdk/recipes-fsl/images/fsl-image-kernelitb/kernel-arm64.its
+@@ -105,13 +105,27 @@
+ 			fdt = "fdt-dtb";
+ 		};
+ 
+-                ls1046afrwy {
++		ls1046afrwy {
+ 			description = "config for ls1046afrwy";
+ 			kernel = "kernel";
+ 			ramdisk = "initrd";
+ 			fdt = "fdt-dtb";
+ 		};
+ 
++		ls1046apscb {
++			description = "config for ls1046apscb";
++			kernel = "kernel";
++			ramdisk = "initrd";
++			fdt = "fdt-dtb";
++		};
++
++		ls1046apscbc {
++			description = "config for ls1046apscbc";
++			kernel = "kernel";
++			ramdisk = "initrd";
++			fdt = "fdt-dtb";
++		};
++
+ 		ls1012ardb {
+ 			description = "config for ls1012ardb";
+ 			kernel = "kernel";
