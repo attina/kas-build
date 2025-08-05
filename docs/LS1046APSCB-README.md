@@ -66,3 +66,21 @@ iface fm1-mac6 inet dhcp
 ```
 ### Patch for meta-qoriq layer
 - patches/ls1046apscb-meta-qoriq.patch
+
+### Install packages through dev netwrok
+#### Update /etc/apt/sources.list file as the following
+```
+deb [trusted=yes] http://101.69.253.219:8000/ls1046apscbc/deb/all ./
+deb [trusted=yes] http://101.69.253.219:8000/ls1046apscbc/deb/aarch64 ./
+deb [trusted=yes] http://101.69.253.219:8000/ls1046apscbc/deb/aarch64-qoriq ./
+deb [trusted=yes] http://101.69.253.219:8000/ls1046apscbc/deb/ls1046apscbc ./
+```
+#### Set the correct system time if haven't done so
+```
+date -s "2025-07-02 15:52:00"
+```
+#### Install the packages
+```
+apt update
+apt install gdb
+```
