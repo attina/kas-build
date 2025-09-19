@@ -1,0 +1,24 @@
+header:
+  version: 14
+  includes:
+    - nxp-base.yml
+
+local_conf_header:
+  ls1046apxcp: |
+    IMAGE_INSTALL:append = " cryptodev-linux cryptodev-module \
+    "
+    CORE_IMAGE_EXTRA_INSTALL += "udev-extraconf lsb-release"
+    CORE_IMAGE_EXTRA_INSTALL:append:qoriq = " udev-rules-qoriq"
+    EXTRA_IMAGE_FEATURES:append = " package-management"
+    PACKAGE_FEED_URIS = "http://101.69.253.219:8000/ls1046apxcp/deb"
+    PACKAGE_CLASSES = "package_deb"
+
+repos:
+  meta-pico:
+    url: https://github.com/attina/meta-pico.git
+    branch: master
+    path: layers/meta-pico
+
+distro: fsl-qoriq
+machine: ls1046apxcp
+target: pico-sdk-ls1046a
