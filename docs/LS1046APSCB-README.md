@@ -18,6 +18,13 @@ kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake qoriq-composite-firmware"
 kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake generate-boottgz"
 kas build kas/nxp/ls1046apscbc-dev.yml
 ```
+### Build Command for ls1046apscbc
+```
+kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake secure-boot-qoriq"
+kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake qoriq-composite-firmware"
+kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake generate-boottgz"
+kas build kas/nxp/ls1046apxcp-dev.yml
+```
 ### Format SD card
 ```
 ./flex-installer -i pf -d /dev/sdc
