@@ -11,7 +11,7 @@ target:
 repos:
   meta-arm:
     url: https://git.yoctoproject.org/meta-arm
-    branch: walnascar
+    branch: master
     path: layers/meta-arm
     layers:
       meta-arm:
