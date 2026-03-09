@@ -4,21 +4,21 @@ header:
 repos:
   bitbake:
     url: https://git.openembedded.org/bitbake
-    tag: yocto-5.3
+    tag: yocto-5.3.1
     path: layers/bitbake
     layers:
       bitbake: excluded
 
   openembedded-core:
     url: https://git.openembedded.org/openembedded-core
-    tag: yocto-5.3
+    tag: yocto-5.3.1
     path: layers/openembedded-core
     layers:
       meta:
 
   meta-yocto:
     url: https://git.yoctoproject.org/meta-yocto
-    tag: yocto-5.3
+    tag: yocto-5.3.1
     path: layers/meta-yocto
     layers:
       meta-poky:
