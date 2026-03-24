@@ -28,16 +28,34 @@ rkdeveloptool db boot.bin
 ```
 - use wl command to write image to target, this step can be repeat for many times;
 ```
-rkdeveloptool wl 0x40 idbloader.img
-rkdeveloptool wl 0x4000 u-boot.img
-rkdeveloptool wl 0x8000 boot.bin
-rkdeveloptool wl 0x40000 rootfs.img
+rkdeveloptool wl 0x0 core-image-minimal-ok3576.rootfs.wic
 ```
-- usb ul command to write idbloader into idb from rockchip loader
+- usb ul command to write idbloader into idb from rockchip loader (not sure whether this is ok)
 ```
 rkdeveloptool ul boot.bin
 ```
 ### Erase MMC in Boot
 ```
 mmc erase 0 0x80000
+```
+### Useful u-boot Command line
+- Switch current mmc device to eMMC
+```
+mmc dev 0
+```
+- Show partitions
+```
+mmc part
+```
+- List files in part and folder
+```
+ext4ls mmc 0:9 /boot
+```
+- Load FIT image to RAM
+```
+ext4load mmc 0:9 0x60000000 /boot/fitImage
+```
+- Boot from RAM
+```
+bootm 0x60000000
 ```
