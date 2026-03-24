@@ -8,6 +8,7 @@
         "${workspaceFolder}/layers/poky/meta/lib"
     ],
     "files.associations": {
+        "*.py": "python",
         "compare": "cpp",
         "cstdint": "cpp",
         "*.conf": "bitbake",
@@ -47,7 +48,7 @@
         "build/tmp/sysroots-components": true,
         "build/tmp/sysroots-uninative": true,
         "build/tmp/work": true,
-        "build/tmp/work-shared": true,
+        "build/tmp/work-shared": false,
         "build/tmp-glibc": true,
     },
     "bitbake.pathToBitbakeFolder": "${workspaceFolder}/layers/poky/bitbake",
