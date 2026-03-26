@@ -59,3 +59,10 @@ ext4load mmc 0:9 0x60000000 /boot/fitImage
 ```
 bootm 0x60000000
 ```
+- Manual boot with uboot command line
+```
+load mmc 0:9 0x80080000 /boot/Image
+load mmc 0:9 0x88000000 /boot/OK3576-C-linux.dtb
+setenv bootargs "earlycon=uart8250,mmio32,0x2ad40000,1500000 console=ttyFIQ0,1500000,earlycon rw rootwait loglevel=7"
+booti 0x80080000 - 0x88000000
+```
