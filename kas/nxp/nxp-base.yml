@@ -8,12 +8,12 @@ repos:
   meta-freescale:
     url: https://github.com/Freescale/meta-freescale
     path: layers/meta-freescale
-    branch: walnascar
+    branch: whinlatter
 
   meta-qoriq:
     url: https://github.com/nxp-qoriq/meta-qoriq
     path: layers/meta-qoriq
-    branch: walnascar
+    branch: whinlatter
     layers:
       meta-qoriq-bsp:
       meta-qoriq-sdk:
@@ -21,7 +21,7 @@ repos:
   meta-freescale-distro:
     url: https://github.com/Freescale/meta-freescale-distro
     path: layers/meta-freescale-distro
-    branch: walnascar
+    branch: whinlatter
 
   #meta-nxp-desktop:
   #  url: https://github.com/nxp-imx/meta-nxp-desktop
