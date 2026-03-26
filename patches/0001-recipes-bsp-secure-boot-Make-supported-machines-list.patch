@@ -1,0 +1,41 @@
+From: Your Name <your.email@example.com>
+Subject: [PATCH] recipes-bsp/secure-boot: Make supported machines list configurable
+
+The current implementation hardcodes the list of supported machines in
+the python __anonymous() function. This makes it difficult for BSP layers
+to add support for custom boards without modifying meta-qoriq-bsp directly.
+
+This patch introduces QORIQ_SECUREBOOT_SUPPORTED_MACHINES variable that
+can be extended via .bbappend files.
+
+Benefits:
+- BSP layers can add their machines without modifying meta-qoriq-bsp
+- Follows Yocto best practices for layer customization
+- Backward compatible - default behavior unchanged
+
+Signed-off-by: Your Name <your.email@example.com>
+---
+ .../recipes-bsp/secure-boot/secure-boot-qoriq.bb | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/meta-qoriq-bsp/recipes-bsp/secure-boot/secure-boot-qoriq.bb b/meta-qoriq-bsp/recipes-bsp/secure-boot/secure-boot-qoriq.bb
+index ce435b3..a1b2c45 100644
+--- a/meta-qoriq-bsp/recipes-bsp/secure-boot/secure-boot-qoriq.bb
++++ b/meta-qoriq-bsp/recipes-bsp/secure-boot/secure-boot-qoriq.bb
+@@ -3,9 +3,12 @@ SECTION = "bootloaders"
+ LICENSE = "GPL-2.0-only"
+ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"
+ 
++# Configurable list of supported machines
++QORIQ_SECUREBOOT_SUPPORTED_MACHINES ??= "ls1012afrwy ls1012ardb ls1021atwr ls1028ardb ls1043ardb ls1046afrwy ls1046ardb ls1088ardb ls1088ardb-pb ls2088ardb lx2160ardb-rev2 lx2162aqds"
++
+ python __anonymous () {
+-    board="ls1012afrwy ls1012ardb ls1021atwr ls1028ardb ls1043ardb ls1046afrwy ls1046ardb ls1088ardb ls1088ardb-pb ls2088ardb lx2160ardb-rev2 lx2162aqds"
++    board = d.getVar("QORIQ_SECUREBOOT_SUPPORTED_MACHINES")
+     m = d.getVar("MACHINE")
+-    if m not in board:
++    if m not in board.split():
+         raise bb.parse.SkipRecipe("This platform not exit secure-boot manifest")
+ }
+-- 
+2.34.1
