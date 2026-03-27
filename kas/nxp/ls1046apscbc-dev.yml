@@ -16,7 +16,7 @@ local_conf_header:
 repos:
   meta-pico:
     url: https://github.com/attina/meta-pico.git
-    branch: master
+    branch: rel/ls1046a/qoriq-kernel-6.6
     path: layers/meta-pico
 
 distro: fsl-qoriq

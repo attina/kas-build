@@ -1,0 +1,20 @@
+header:
+    version: 14
+overrides:
+    repos:
+        poky:
+            commit: b68050f511efa8c4f3b24d05c8168d1ad23e9a2e
+        meta-openembedded:
+            commit: 06f846a325fde423bb0a6d49d771d8c1e144d7eb
+        meta-arm:
+            commit: a81c19915b5b9e71ed394032e9a50fd06919e1cd
+        meta-virtualization:
+            commit: 3dd635f613f7299d986a8ab6bc9f584370f8ed1d
+        meta-freescale:
+            commit: 902dde8c5bd29bb507ac8d37772565a6c9ab77cd
+        meta-qoriq:
+            commit: 533e78f92774326d48f15adb5982a516fe114ee7
+        meta-freescale-distro:
+            commit: b9d6a5d9931922558046d230c1f5f4ef6ee72345
+        meta-pico:
+            commit: cec487e7775c10c97cedbb845555cb9a05ed8ac0
