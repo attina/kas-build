@@ -17,4 +17,4 @@ overrides:
         meta-freescale-distro:
             commit: b9d6a5d9931922558046d230c1f5f4ef6ee72345
         meta-pico:
-            commit: f0455e322669a527af7e0c54e17d352b9a299470
+            commit: 9044a271616c517b63d04a21d5f44014390c3d39
