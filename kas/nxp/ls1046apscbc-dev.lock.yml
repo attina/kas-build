@@ -13,8 +13,8 @@ overrides:
         meta-freescale:
             commit: 902dde8c5bd29bb507ac8d37772565a6c9ab77cd
         meta-qoriq:
-            commit: 533e78f92774326d48f15adb5982a516fe114ee7
+            commit: 98f951a113ab598f33b3c2ba798b6408ca969a34
         meta-freescale-distro:
             commit: b9d6a5d9931922558046d230c1f5f4ef6ee72345
         meta-pico:
-            commit: f0455e322669a527af7e0c54e17d352b9a299470
+            commit: 173eeb13b6915ac842038ac3f3c53ef06daa6092

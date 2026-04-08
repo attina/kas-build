@@ -11,9 +11,9 @@ repos:
     branch: scarthgap
 
   meta-qoriq:
-    url: https://github.com/nxp-qoriq/meta-qoriq
+    url: https://github.com/attina/meta-qoriq
     path: layers/meta-qoriq
-    branch: scarthgap
+    branch: rel/picocom/scarthgap
     layers:
       meta-qoriq-bsp:
       meta-qoriq-sdk:
