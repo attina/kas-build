@@ -1,24 +1,24 @@
 header:
-  version: 16
+  version: 21
 
 repos:
   bitbake:
     url: https://git.openembedded.org/bitbake
-    tag: yocto-5.3.2
+    tag: yocto-5.3.3
     path: layers/bitbake
     layers:
-      bitbake: excluded
+      bitbake: disabled
 
   openembedded-core:
     url: https://git.openembedded.org/openembedded-core
-    tag: yocto-5.3.2
+    tag: yocto-5.3.3
     path: layers/openembedded-core
     layers:
       meta:
 
   meta-yocto:
     url: https://git.yoctoproject.org/meta-yocto
-    tag: yocto-5.3.2
+    tag: yocto-5.3.3
     path: layers/meta-yocto
     layers:
       meta-poky:

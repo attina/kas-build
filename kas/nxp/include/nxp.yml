@@ -1,8 +1,5 @@
 header:
-  version: 1
-  includes:
-    - include/local.yml
-    - include/oe.yml
+  version: 21
 
 repos:
   meta-freescale:
@@ -11,19 +8,22 @@ repos:
     branch: whinlatter
 
   meta-qoriq:
-    url: https://github.com/attina/meta-qoriq
+    url: https://github.com/nxp-qoriq/meta-qoriq
     path: layers/meta-qoriq
-    branch: rel/picocom/whinlatter
+    branch: whinlatter
     layers:
-      meta-qoriq-bsp:
-      meta-qoriq-sdk:
+      .: disabled
+    #  meta-qoriq-bsp:
+    #  meta-qoriq-sdk:
 
   meta-freescale-distro:
     url: https://github.com/Freescale/meta-freescale-distro
     path: layers/meta-freescale-distro
     branch: whinlatter
 
-  #meta-nxp-desktop:
-  #  url: https://github.com/nxp-imx/meta-nxp-desktop
-  #  path: layers/meta-nxp-desktop
-  #  branch: lf-6.1.55-2.2.0-mickledore
+  meta-nxp-desktop:
+    url: https://github.com/nxp-imx/meta-nxp-desktop
+    path: layers/meta-nxp-desktop
+    branch: lf-6.1.55-2.2.0-mickledore
+    layers:
+      .: disabled

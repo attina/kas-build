@@ -1,0 +1,16 @@
+header:
+  version: 21
+
+repos:
+  meta-qoriq-attina:
+    url: https://github.com/attina/meta-qoriq
+    path: layers/meta-qoriq-attina
+    branch: rel/picocom/whinlatter
+    layers:
+      meta-qoriq-bsp:
+      meta-qoriq-sdk:
+
+  meta-pico:
+    url: https://github.com/attina/meta-pico
+    branch: master
+    path: layers/meta-pico
