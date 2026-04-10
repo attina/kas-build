@@ -1,0 +1,15 @@
+header:
+  version: 21
+
+repos:
+  meta-openwrt:
+    url: https://github.com/attina/meta-openwrt
+    branch: openwrt-22.03
+    path: layers/meta-openwrt
+
+local_conf_header:
+  default: |
+    INHERIT += " openwrt-distro-defaults "
+    PACKAGE_CLASSES = "package_ipk"
+
+target: openwrt-image-minimal

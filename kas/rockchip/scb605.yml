@@ -4,7 +4,6 @@ header:
     - include/local.yml
     - include/oe.yml
     - include/rockchip.yml
-    - include/openwrt.yml
     - include/attina.yml
 
-machine: scb600
+machine: scb605

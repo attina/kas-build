@@ -1,0 +1,11 @@
+
+header:
+  version: 21
+
+repos:
+  meta-rockchip:
+    url: https://github.com/JeffyCN/meta-rockchip
+    branch: master
+    path: layers/meta-rockchip
+    layers:
+      .: disabled

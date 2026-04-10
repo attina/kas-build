@@ -1,24 +1,10 @@
 header:
-  version: 8
+  version: 21
   includes:
-    - poky-base.yml
+    - include/local.yml
+    - include/oe.yml
+    - include/rockchip.yml
+    - include/openwrt.yml
+    - include/attina.yml
 
 machine: scb605
-
-repos:
-  meta-openwrt:
-    url: https://github.com/attina/meta-openwrt.git
-    branch: openwrt-22.03
-    path: layers/meta-openwrt
-
-target:
-  - openwrt-image-minimal
-
-local_conf_header:
-  default: |
-    INHERIT += " openwrt-distro-defaults "
-    PACKAGE_CLASSES = "package_ipk"
-    IMAGE_FEATURES += "package-management"
-  scb600: |
-    IMAGE_INSTALL:append = " lrzsz linux-firmware-rtl-nic \
-    luci uhttpd"

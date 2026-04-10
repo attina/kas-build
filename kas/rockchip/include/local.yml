@@ -1,5 +1,5 @@
 header:
-  version: 8
+  version: 21
 
 bblayers_conf_header:
   standard: |
@@ -12,7 +12,6 @@ local_conf_header:
     CONF_VERSION = "2"
     PACKAGE_CLASSES = "package_deb"
     SDKMACHINE = "x86_64"
-    USER_CLASSES ?= "buildstats"
     EXTRA_IMAGE_FEATURES ?= " \
         ssh-server-dropbear \
         package-management \
@@ -27,3 +26,6 @@ local_conf_header:
         HALT,${DL_DIR},100M,1K \
         HALT,${SSTATE_DIR},100M,1K \
         HALT,/tmp,10M,1K"
+
+target: core-image-base
+distro: poky
