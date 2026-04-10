@@ -26,5 +26,5 @@ repos:
 
   meta-rockchip:
     url: https://git.yoctoproject.org/meta-rockchip
-    branch: master
+    branch: whinlatter
     path: layers/meta-rockchip
