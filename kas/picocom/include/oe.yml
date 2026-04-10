@@ -2,18 +2,9 @@ header:
   version: 8
 
 repos:
-  meta-picocom:
-    url: https://github.com/picocom-chips/meta-picocom.git
-    path: layers/meta-picocom
-
-  meta-riscv:
-    url: https://github.com/riscv/meta-riscv
-    path: layers/meta-riscv
-    commit: 0bd22610f8f4f0b17efcfba08b29f58fb3e6d3f0 # kirkstone
-
   poky:
     url: https://git.yoctoproject.org/git/poky
-    commit: db0505b9ba33015038eaecce835fd991db32ed20 # kirkstone
+    branch: kirkstone
     path: layers/poky
     layers:
       meta:
@@ -22,7 +13,7 @@ repos:
 
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
-    commit: 7b3fdcdfaab2fc964bbf9eec2cce4e03001fa8cf # kirkstone
+    branch: kirkstone
     path: layers/meta-openembedded
     layers:
       meta-oe:
