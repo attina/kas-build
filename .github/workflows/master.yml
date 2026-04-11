@@ -19,12 +19,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - config: kas/rockchip/scb605-openwrt.yml
-            target: scb605-openwrt
-          - config: kas/nxp/ls1046apscb-dev.yml
-            target: ls1046apscb-dev
-          # - config: kas/picocom/pc805-dev.yml
-          #   target: pc805-dev
+          - config: kas/rockchip/ok3576.yml
+            target: ok3576
+          - config: kas/nxp/ls1046apscb.yml
+            target: ls1046apscb
+          # - config: kas/picocom/pc805.yml
+          #   target: pc805
       fail-fast: false
 
     steps:

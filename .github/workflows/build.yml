@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       config:
-        description: 'Config file path (e.g., kas/rockchip/scb600-openwrt.yml)'
+        description: 'Config file path (e.g., kas/rockchip/ok3576.yml)'
         required: true
-        default: 'kas/rockchip/scb600-openwrt.yml'
+        default: 'kas/rockchip/ok3576.yml'
       recipe:
         description: 'Recipe to build (e.g., virtual/kernel)'
         required: true
