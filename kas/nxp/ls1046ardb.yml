@@ -8,7 +8,7 @@ header:
 
 local_conf_header:
   ls1046ardb: |
-    PACKAGE_FEED_URIS = "http://101.69.253.219:8000/ls1046ardb/deb"
+    PACKAGE_FEED_URIS = "http://10.13.52.24:5678/deb"
 
 machine: ls1046ardb
 target: core-image-base

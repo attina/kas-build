@@ -8,13 +8,14 @@ repos:
     branch: whinlatter
 
   meta-qoriq:
-    url: https://github.com/nxp-qoriq/meta-qoriq
+    # url: https://github.com/nxp-qoriq/meta-qoriq
+    # branch: whinlatter
+    url: https://github.com/attina/meta-qoriq
+    branch: rel/picocom/whinlatter
     path: layers/meta-qoriq
-    branch: whinlatter
     layers:
-      .: disabled
-    #  meta-qoriq-bsp:
-    #  meta-qoriq-sdk:
+      meta-qoriq-bsp:
+      meta-qoriq-sdk:
 
   meta-freescale-distro:
     url: https://github.com/Freescale/meta-freescale-distro
