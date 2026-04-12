@@ -45,5 +45,3 @@ repos:
     url: https://git.yoctoproject.org/meta-rockchip
     branch: whinlatter
     path: layers/meta-rockchip-yocto
-    layers:
-      .: disabled

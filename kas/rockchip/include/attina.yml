@@ -7,14 +7,9 @@ repos:
     branch: master
     path: layers/meta-pico
 
-  meta-rockchip-attina:
-    url: https://github.com/attina/meta-rockchip
-    branch: master
-    path: layers/meta-rockchip-attina
-
 # the following bbappend files are only included when use yocto meta-rockchip layer, and only for rk3576 machine
-local_conf_header:
-  rkbin-rk3576-pico: |
-    BBMASK += "meta-pico/dynamic-layers/meta-rockchip/recipes-bsp/rkbin/rockchip-rkbin-ddr_.*\.bbappend"
-    BBMASK += "meta-pico/dynamic-layers/meta-rockchip/recipes-bsp/rkbin/rockchip-rkbin-optee-os_.*\.bbappend"
-    BBMASK += "meta-pico/dynamic-layers/meta-rockchip/recipes-bsp/rkbin/rockchip-rkbin-tf-a_.*\.bbappend"
+#local_conf_header:
+#  rkbin-rk3576-pico: |
+#    BBMASK += "meta-pico/dynamic-layers/meta-rockchip/recipes-bsp/rkbin/rockchip-rkbin-ddr_.*\.bbappend"
+#    BBMASK += "meta-pico/dynamic-layers/meta-rockchip/recipes-bsp/rkbin/rockchip-rkbin-optee-os_.*\.bbappend"
+#    BBMASK += "meta-pico/dynamic-layers/meta-rockchip/recipes-bsp/rkbin/rockchip-rkbin-tf-a_.*\.bbappend"

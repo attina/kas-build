@@ -4,7 +4,8 @@ header:
 
 repos:
   meta-rockchip:
-    url: https://github.com/JeffyCN/meta-rockchip
+    # url: https://github.com/JeffyCN/meta-rockchip
+    url: https://github.com/attina/meta-rockchip
     branch: master
     path: layers/meta-rockchip
     layers:

@@ -16,6 +16,10 @@ local_conf_header:
         ssh-server-dropbear \
         package-management \
     "
+
+  rockchip-image: |
+    INHERIT:append = " rockchip-image"
+
   diskmon: |
     BB_DISKMON_DIRS ??= "\
         STOPTASKS,${TMPDIR},1G,100K \
