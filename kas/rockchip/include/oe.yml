@@ -42,6 +42,7 @@ repos:
       meta-arm-toolchain:
 
   meta-rockchip-yocto:
-    url: https://git.yoctoproject.org/meta-rockchip
-    branch: whinlatter
+    # url: https://git.yoctoproject.org/meta-rockchip
+    url: https://github.com/attina/meta-rockchip-yocto
+    branch: users/gavin/whinlatter
     path: layers/meta-rockchip-yocto
