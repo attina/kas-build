@@ -28,11 +28,17 @@ rkdeveloptool db boot.bin
 ```
 - use wl command to write image to target, this step can be repeat for many times;
 ```
-rkdeveloptool wl 0x0 core-image-minimal-ok3576.rootfs.wic
+rkdeveloptool wl 0x0 core-image-base-ok3576.rootfs.wic
 ```
 - usb ul command to write idbloader into idb from rockchip loader (not sure whether this is ok)
 ```
 rkdeveloptool ul boot.bin
+```
+Or use upgrade_tool
+```
+upgrade_tool db loader.bin
+upgrade_tool wl 0x0 core-image-base-ok3576.rootfs.wic
+upgrade_tool rd
 ```
 ### Erase MMC in Boot
 ```
