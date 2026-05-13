@@ -102,3 +102,9 @@ date -s "2025-07-02 15:52:00"
 apt update
 apt install gdb
 ```
+#### Use u-boot-tools access u-boot environment in kernel
+create file /etc/fw_env.config with the following content
+```
+# Device name      Device offset    Env. size      Flash sector size
+/dev/mmcblk0       0x500000         0x2000         0x2000
+```
