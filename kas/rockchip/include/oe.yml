@@ -32,6 +32,7 @@ repos:
       meta-oe:
       meta-networking:
       meta-python:
+      meta-filesystems:
 
   meta-arm:
     url: https://git.yoctoproject.org/meta-arm
@@ -46,3 +47,8 @@ repos:
     url: https://github.com/attina/meta-rockchip-yocto
     branch: users/gavin/whinlatter
     path: layers/meta-rockchip-yocto
+
+  meta-virtualization:
+    url: https://git.yoctoproject.org/meta-virtualization
+    path: layers/meta-virtualization
+    branch: whinlatter

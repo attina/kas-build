@@ -16,9 +16,17 @@ local_conf_header:
         ssh-server-dropbear \
         package-management \
     "
+    IMAGE_INSTALL:append = " e2fsprogs-resize2fs parted"
 
   rootlogin: |
     EXTRA_IMAGE_FEATURES += " allow-empty-password empty-root-password allow-root-login"
+
+  docker: |
+    DISTRO_FEATURES:append = " virtualization"
+
+  package manager: |
+    PACKAGE_FEED_URIS = "http://10.13.52.24:5678"
+    DISTRO_EXTRA_RDEPENDS += "docker-moby nftables jansson libnftnl"
 
   diskmon: |
     BB_DISKMON_DIRS ??= "\
