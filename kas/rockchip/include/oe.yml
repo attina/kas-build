@@ -4,21 +4,21 @@ header:
 repos:
   bitbake:
     url: https://git.openembedded.org/bitbake
-    tag: yocto-5.3.3
+    tag: yocto-6.0
     path: layers/bitbake
     layers:
       bitbake: disabled
 
   openembedded-core:
     url: https://git.openembedded.org/openembedded-core
-    tag: yocto-5.3.3
+    tag: yocto-6.0
     path: layers/openembedded-core
     layers:
       meta:
 
   meta-yocto:
     url: https://git.yoctoproject.org/meta-yocto
-    tag: yocto-5.3.3
+    tag: yocto-6.0
     path: layers/meta-yocto
     layers:
       meta-poky:
@@ -26,7 +26,7 @@ repos:
 
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
-    branch: whinlatter
+    branch: wrynose
     path: layers/meta-openembedded
     layers:
       meta-oe:
@@ -36,7 +36,7 @@ repos:
 
   meta-arm:
     url: https://git.yoctoproject.org/meta-arm
-    branch: whinlatter
+    branch: wrynose
     path: layers/meta-arm
     layers:
       meta-arm:
@@ -45,10 +45,10 @@ repos:
   meta-rockchip-yocto:
     # url: https://git.yoctoproject.org/meta-rockchip
     url: https://github.com/attina/meta-rockchip-yocto
-    branch: users/gavin/whinlatter
+    branch: users/gavin/wrynose
     path: layers/meta-rockchip-yocto
 
   meta-virtualization:
     url: https://git.yoctoproject.org/meta-virtualization
     path: layers/meta-virtualization
-    branch: whinlatter
+    branch: wrynose
