@@ -5,13 +5,13 @@ repos:
   meta-freescale:
     url: https://github.com/Freescale/meta-freescale
     path: layers/meta-freescale
-    branch: whinlatter
+    branch: wrynose
 
   meta-qoriq:
     # url: https://github.com/nxp-qoriq/meta-qoriq
     # branch: whinlatter
     url: https://github.com/attina/meta-qoriq
-    branch: rel/picocom/whinlatter
+    branch: rel/picocom/wrynose
     path: layers/meta-qoriq
     layers:
       meta-qoriq-bsp:
@@ -20,7 +20,7 @@ repos:
   meta-freescale-distro:
     url: https://github.com/Freescale/meta-freescale-distro
     path: layers/meta-freescale-distro
-    branch: whinlatter
+    branch: wrynose
 
   meta-nxp-desktop:
     url: https://github.com/nxp-imx/meta-nxp-desktop
