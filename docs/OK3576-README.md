@@ -10,6 +10,7 @@ git clone https://github.com/picocom-chips/kas-build.git
 cd kas-build
 kas build kas/rockchip/ok3576.yml
 ```
+Sync the meta layers, but do not build.
 ```
 kas checkout kas/rockchip/ok3576.yml
 ```
@@ -18,23 +19,21 @@ If you want to use the aarch64 cross compiler out of the docker environment, you
 ```
 kas shell kas/rockchip/ok3576.yml -c "bitbake core-image-minimal -c populate_sdk"
 ```
-### Flash Images to the board
+### Build nodejs
+```
+kas shell kas/rockchip/ok3576.yml -c "bitbake nodejs brotli c-ares" && kas shell kas/rockchip/ok3576.yml -c "bitbake package-index"
+```
+## Flash
 1. Make target board boot into rockusb mode;
 2. Connect target to Host PC via USB;
 3. Write the image to the eMMC with tool command;
-- use download boot command to make target init DRAM and run usbplug;
+### rkdeveloptool download commands
 ```
 rkdeveloptool db boot.bin
-```
-- use wl command to write image to target, this step can be repeat for many times;
-```
 rkdeveloptool wl 0x0 core-image-base-ok3576.rootfs.wic
-```
-- usb ul command to write idbloader into idb from rockchip loader (not sure whether this is ok)
-```
 rkdeveloptool ul boot.bin
 ```
-Or use upgrade_tool
+### upgrade_tool download commands
 ```
 upgrade_tool db loader.bin
 upgrade_tool wl 0x0 core-image-base-ok3576.rootfs.wic
@@ -45,27 +44,27 @@ upgrade_tool rd
 mmc erase 0 0x80000
 ```
 ### Useful u-boot Command line
-- Switch current mmc device to eMMC
+#### Switch current mmc device to eMMC
 ```
 mmc dev 0
 ```
-- Show partitions
+#### Show partitions
 ```
 mmc part
 ```
-- List files in part and folder
+#### List files in part and folder
 ```
 ext4ls mmc 0:9 /boot
 ```
-- Load FIT image to RAM
+#### Load FIT image to RAM
 ```
 ext4load mmc 0:9 0x60000000 /boot/fitImage
 ```
-- Boot from RAM
+#### Boot from RAM
 ```
 bootm 0x60000000
 ```
-- Manual boot with uboot command line
+#### Manual boot with uboot command line
 ```
 load mmc 0:9 0x80080000 /boot/Image
 load mmc 0:9 0x88000000 /boot/OK3576-C-linux.dtb
