@@ -6,7 +6,7 @@ kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake qoriq-composite-firmware"
 kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake generate-boottgz"
 kas build kas/nxp/ls1046apscb-dev.yml
 # all steps in one command line
-clear && kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake secure-boot-qoriq" && kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake qoriq-composite-firmware" && kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake generate-boottgz" && kas build kas/nxp/ls1046apscb-dev.yml
+clear && kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake secure-boot-qoriq" && kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake qoriq-composite-firmware" && kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake generate-boottgz" && kas build kas/nxp/ls1046apscb-dev.yml && kas shell kas/nxp/ls1046apscb-dev.yml -c "bitbake package-index"
 ```
 ### Build Command for ls1046apscbc
 ```
@@ -15,7 +15,7 @@ kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake qoriq-composite-firmware"
 kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake generate-boottgz"
 kas build kas/nxp/ls1046apscbc-dev.yml
 # all steps in one command line
-clear && kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake secure-boot-qoriq" && kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake qoriq-composite-firmware" && kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake generate-boottgz" && kas build kas/nxp/ls1046apscbc-dev.yml
+clear && kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake secure-boot-qoriq" && kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake qoriq-composite-firmware" && kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake generate-boottgz" && kas build kas/nxp/ls1046apscbc-dev.yml && kas shell kas/nxp/ls1046apscbc-dev.yml -c "bitbake package-index"
 ```
 ### Build Command for ls1046apxcp
 ```
@@ -24,7 +24,7 @@ kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake qoriq-composite-firmware"
 kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake generate-boottgz"
 kas build kas/nxp/ls1046apxcp-dev.yml
 # all steps in one command line
-clear && kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake secure-boot-qoriq" && kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake qoriq-composite-firmware" && kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake generate-boottgz" && kas build kas/nxp/ls1046apxcp-dev.yml
+clear && kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake secure-boot-qoriq" && kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake qoriq-composite-firmware" && kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake generate-boottgz" && kas build kas/nxp/ls1046apxcp-dev.yml && kas shell kas/nxp/ls1046apxcp-dev.yml -c "bitbake package-index"
 ```
 ### Build Command for ls1046apscbx5
 ```
@@ -33,7 +33,7 @@ kas shell kas/nxp/ls1046apscbx5-dev.yml -c "bitbake qoriq-composite-firmware"
 kas shell kas/nxp/ls1046apscbx5-dev.yml -c "bitbake generate-boottgz"
 kas build kas/nxp/ls1046apscbx5-dev.yml
 # all steps in one command line
-clear && kas shell kas/nxp/ls1046apscbx5-dev.yml -c "bitbake secure-boot-qoriq" && kas shell kas/nxp/ls1046apscbx5-dev.yml -c "bitbake qoriq-composite-firmware" && kas shell kas/nxp/ls1046apscbx5-dev.yml -c "bitbake generate-boottgz" && kas build kas/nxp/ls1046apscbx5-dev.yml
+clear && kas shell kas/nxp/ls1046apscbx5-dev.yml -c "bitbake secure-boot-qoriq" && kas shell kas/nxp/ls1046apscbx5-dev.yml -c "bitbake qoriq-composite-firmware" && kas shell kas/nxp/ls1046apscbx5-dev.yml -c "bitbake generate-boottgz" && kas build kas/nxp/ls1046apscbx5-dev.yml && kas shell kas/nxp/ls1046apscbx5-dev.yml -c "bitbake package-index"
 ```
 ### Format SD card
 ```
@@ -91,4 +91,8 @@ date -s "2025-07-02 15:52:00"
 ```
 apt update
 apt install gdb
+```
+#### find which package provides ldd
+```
+kas shell kas/nxp/ls1046apxcp-dev.yml -c "oe-pkgdata-util lookup-recipe ldd"
 ```
