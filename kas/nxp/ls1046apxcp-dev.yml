@@ -8,7 +8,7 @@ local_conf_header:
     IMAGE_INSTALL:append = " cryptodev-linux cryptodev-module \
       libgpiod libgpiod-tools util-linux-ipcs glibc-utils \
       gdb pcsc-lite openssl pcsc-tools net-tools phytool \
-      alsa-utils i2c-tools ldd \
+      alsa-utils i2c-tools ldd tcpdump \
     "
     CORE_IMAGE_EXTRA_INSTALL += "udev-extraconf lsb-release"
     CORE_IMAGE_EXTRA_INSTALL:append:qoriq = " udev-rules-qoriq"
