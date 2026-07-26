@@ -1,0 +1,18 @@
+header:
+  version: 21
+  includes:
+    - include/local.yml
+    - include/oe.yml
+    - include/rockchip.yml
+    - include/attina.yml
+
+local_conf_header:
+  rk3576acp: |
+    IMAGE_INSTALL:append = " \
+      libgpiod libgpiod-tools util-linux-ipcs glibc-utils \
+      gdb pcsc-lite openssl pcsc-tools net-tools phytool \
+      alsa-utils i2c-tools ldd tcpdump iperf3 ethtool \
+      net-tools-mii-tool \
+    "
+
+machine: rk3576acp
