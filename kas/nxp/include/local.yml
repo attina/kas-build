@@ -3,9 +3,9 @@ header:
 
 local_conf_header:
   default: |
-    CORE_IMAGE_EXTRA_INSTALL += " udev-extraconf lsb-release"
-    CORE_IMAGE_EXTRA_INSTALL:qoriq += " udev-rules-qoriq"
-    CORE_IMAGE_EXTRA_INSTALL += " cryptodev-linux cryptodev-module \
+    IMAGE_INSTALL:append:pn-pico-sdk-ls1046a = " \
+      udev-extraconf lsb-release udev-rules-qoriq \
+      cryptodev-linux cryptodev-module \
       libgpiod libgpiod-tools \
     "
 
