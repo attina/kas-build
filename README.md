@@ -7,4 +7,4 @@ You can get board specified readme file at:
 [SCBXY README](https://github.com/attina/kas-build/blob/master/docs/SCBXY-README.md)
 
 ## For LS1046PSCB
-[LS1046APSCB README](https://github.com/attina/kas-build/blob/master/docs/LS1046APSCB-README.md)
+[LS1046A README](https://github.com/attina/kas-build/blob/master/docs/LS1046A-README.md)
