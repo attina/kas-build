@@ -1,4 +1,13 @@
-# LS1046APSCB Yocto Build Environment (KAS)
+# LS1046A Yocto Build Environment
+
+This document covers LS1046A platform boards maintained in this repository:
+
+- `ls1046apscb`
+- `ls1046apscbc`
+- `ls1046apscbx5`
+- `ls1046apxcp`
+
+The build system is based on Yocto and Kas. LS1046A board support is provided through the NXP QorIQ related layers and Picocom metadata.
 
 ### Build Rootfs
 ```
