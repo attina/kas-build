@@ -12,7 +12,8 @@ local_conf_header:
       libgpiod libgpiod-tools util-linux-ipcs glibc-utils \
       gdb pcsc-lite openssl pcsc-tools net-tools phytool \
       alsa-utils i2c-tools ldd tcpdump iperf3 ethtool \
-      net-tools-mii-tool \
+      net-tools-mii-tool cjson libatomic \
+      kernel-module-uio kernel-module-uio-pci-generic \
     "
 
 machine: rk3576acp
