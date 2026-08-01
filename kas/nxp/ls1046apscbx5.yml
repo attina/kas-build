@@ -6,8 +6,4 @@ header:
     - include/nxp.yml
     - include/attina.yml
 
-local_conf_header:
-  ls1046apscbx5: |
-    PACKAGE_FEED_URIS = "http://101.69.253.219:8000/ls1046apscbx5/deb"
-
 machine: ls1046apscbx5

@@ -11,6 +11,7 @@ local_conf_header:
 
     EXTRA_IMAGE_FEATURES += " package-management"
     PACKAGE_CLASSES = "package_deb"
+    PACKAGE_FEED_URIS ?= "http://101.69.253.219:8000/${MACHINE}/deb"
 
     SDKMACHINE = "x86_64"
     CONF_VERSION = "2"
