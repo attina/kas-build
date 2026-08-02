@@ -14,6 +14,9 @@ local_conf_header:
       alsa-utils i2c-tools ldd tcpdump iperf3 ethtool \
       net-tools-mii-tool cjson libatomic \
       kernel-module-uio kernel-module-uio-pci-generic \
+      kernel-module-cfg80211 kernel-module-brcmfmac \
+      kernel-module-brcmfmac-bca kernel-module-brcmfmac-cyw \
+      kernel-module-brcmfmac-wcc rkwifibt-firmware \
     "
 
 machine: rk3576acp
