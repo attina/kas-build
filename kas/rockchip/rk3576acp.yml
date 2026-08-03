@@ -8,15 +8,45 @@ header:
 
 local_conf_header:
   rk3576acp: |
+    # Base runtime
     IMAGE_INSTALL:append = " \
-      libgpiod libgpiod-tools util-linux-ipcs glibc-utils \
-      gdb pcsc-lite openssl pcsc-tools net-tools phytool \
-      alsa-utils i2c-tools ldd tcpdump iperf3 ethtool \
-      net-tools-mii-tool cjson libatomic \
+      busybox glibc-utils haveged ldd python3 util-linux-ipcs \
+    "
+
+    # Storage and kernel extras
+    IMAGE_INSTALL:append = " \
+      kernel-modules kernel-selftest \
       kernel-module-uio kernel-module-uio-pci-generic \
+    "
+
+    # Board and hardware tools
+    IMAGE_INSTALL:append = " \
+      alsa-utils i2c-tools libgpiod libgpiod-tools pciutils \
+      pcsc-lite pcsc-tools phytool picocom-startup-script \
+    "
+
+    # Network tools
+    IMAGE_INSTALL:append = " \
+      bridge-utils ethtool iperf3 linuxptp net-tools \
+      net-tools-mii-tool tcpdump \
+    "
+
+    # WiFi support
+    IMAGE_INSTALL:append = " \
       kernel-module-cfg80211 kernel-module-brcmfmac \
       kernel-module-brcmfmac-bca kernel-module-brcmfmac-cyw \
-      kernel-module-brcmfmac-wcc rkwifibt-firmware \
+      kernel-module-brcmfmac-wcc rkwifibt-firmware wireless-regdb \
+    "
+
+    # Development and debug tools
+    IMAGE_INSTALL:append = " \
+      gdb git htop lrzsz vim \
+    "
+
+    # Runtime libraries used by local applications
+    IMAGE_INSTALL:append = " \
+      cjson libatomic libcrypto libelf libgcc libnl libpcap \
+      libssl numactl openssl zlib \
     "
 
 machine: rk3576acp
