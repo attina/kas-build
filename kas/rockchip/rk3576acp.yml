@@ -15,7 +15,7 @@ local_conf_header:
 
     # Storage and kernel extras
     IMAGE_INSTALL:append = " \
-      kernel-modules kernel-selftest \
+      kernel-modules \
       kernel-module-uio kernel-module-uio-pci-generic \
     "
 
@@ -33,9 +33,10 @@ local_conf_header:
 
     # WiFi support
     IMAGE_INSTALL:append = " \
+      iw wpa-supplicant \
       kernel-module-cfg80211 kernel-module-brcmfmac \
       kernel-module-brcmfmac-bca kernel-module-brcmfmac-cyw \
-      kernel-module-brcmfmac-wcc rkwifibt-firmware wireless-regdb \
+      kernel-module-brcmfmac-wcc rkwifibt-firmware wireless-regdb-static \
     "
 
     # Development and debug tools
