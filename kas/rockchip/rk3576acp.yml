@@ -35,7 +35,8 @@ local_conf_header:
     IMAGE_INSTALL:append = " \
       iw wpa-supplicant networkmanager networkmanager-nmcli \
       kernel-module-cfg80211 bcmdhd \
-      rkwifibt-firmware wireless-regdb-static \
+      rkwifibt-firmware rk-hciattach bluez5 bluez5-testtools \
+      wireless-regdb-static \
     "
 
     # Development and debug tools
