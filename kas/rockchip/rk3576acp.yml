@@ -33,10 +33,9 @@ local_conf_header:
 
     # WiFi support
     IMAGE_INSTALL:append = " \
-      iw wpa-supplicant \
-      kernel-module-cfg80211 kernel-module-brcmfmac \
-      kernel-module-brcmfmac-bca kernel-module-brcmfmac-cyw \
-      kernel-module-brcmfmac-wcc rkwifibt-firmware wireless-regdb-static \
+      iw wpa-supplicant networkmanager networkmanager-nmcli \
+      kernel-module-cfg80211 bcmdhd \
+      rkwifibt-firmware wireless-regdb-static \
     "
 
     # Development and debug tools
