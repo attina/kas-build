@@ -34,8 +34,8 @@ local_conf_header:
     # WiFi support
     IMAGE_INSTALL:append = " \
       iw wpa-supplicant networkmanager networkmanager-nmcli \
-      kernel-module-cfg80211 bcmdhd \
-      rkwifibt-firmware rk-hciattach bluez5 bluez5-testtools \
+      kernel-module-cfg80211 bcmdhd rkwifibt-firmware \
+      rk-hciattach bluez5 bluez5-testtools bluez5-obex \
       wireless-regdb-static \
     "
 
