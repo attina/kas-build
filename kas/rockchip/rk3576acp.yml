@@ -41,7 +41,7 @@ local_conf_header:
 
     # Development and debug tools
     IMAGE_INSTALL:append = " \
-      gdb git htop lrzsz vim \
+      gdb git htop lrzsz vim minicom\
     "
 
     # Runtime libraries used by local applications
