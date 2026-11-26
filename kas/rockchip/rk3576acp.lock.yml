@@ -13,7 +13,7 @@ overrides:
     meta-arm:
       commit: 052c2cf333ecf16fc2ded4c5d09749ebaff8c0c5
     meta-rockchip-yocto:
-      commit: 90b6263990cad29adb5467574d44e264f29c48cf
+      commit: 8b07c2913b91982601694fbd8edfb9754d004aa7
     meta-virtualization:
       commit: e1bdfe90563487f0a3253cd4b0d5bb7fa5194d83
     meta-rockchip:
